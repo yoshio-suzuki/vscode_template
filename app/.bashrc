@@ -8,6 +8,9 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
+# env
+export LANG=ja_JP.UTF-8
+
 # alias
 alias ll='ls -la'
 alias less='less -XR'
