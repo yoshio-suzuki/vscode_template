@@ -110,6 +110,7 @@ $ docker system prune --volumes
 ```
 
 * 画像表示
+* Pythonエクステンションのリロードが必要かも
 ```python
 #%%
 import cv2
@@ -152,3 +153,6 @@ $ pipenv sync
 .venv
 .vscode
 ```
+
+### その他
+* ターミナルからgitコマンド操作したほうが楽か?
