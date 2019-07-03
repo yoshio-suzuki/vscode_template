@@ -77,10 +77,46 @@ $ docker system prune --volumes
 * Extensionsから下記追加(Install on Attached Container)
     * Python
 
-### コンテナ用シェル設定
-* Settingsの**Remote[Attached Container ...]側**で、terminal.integrated.shell.linux: /bin/bashに設定
-* Edit in settings.jsonから設定
+### ショットカット設定
+* bashターミナルとvim向け
+* File > Preferences > Keyboard Shortcuts > Open Keyboard Shortcuts(JSON)からkeybindings.jsonを編集
+```json
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "-editor.action.toggleTabFocusMode"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-workbench.action.terminal.focusFindWidget",
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "extension.vim_ctrl+c",
+        "when": "editorTextFocus && vim.active && vim.overrideCtrlC && vim.use<C-c> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+shift+v",
+        "command": "extension.vim_ctrl+v",
+        "when": "editorTextFocus && vim.active && vim.use<C-v> && !inDebugRepl"
+    }
+]
 ```
+
+### コンテナ用シェル設定
+* コンテナでターミナルを開くとbashではなくshになってしまう対処（そのうち修正されるかも）
+* Settingsの『**Remote[Attached Container ...]側**』で、terminal.integrated.shell.linux: /bin/bashに設定
+* Edit in settings.jsonから設定
+```json
 {
     "terminal.integrated.shell.linux": "/bin/bash"
 }
