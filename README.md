@@ -113,8 +113,7 @@ $ docker system prune --volumes
 
 * コンテナ用シェル設定
     * コンテナでターミナルを開くとbashではなくshになってしまう対処（そのうち修正されるかも）
-    * Settingsの『**Remote[Attached Container ...]側**』で、terminal.integrated.shell.linux: /bin/bashに設定
-    * Edit in settings.jsonから設定
+    * File > Preferences > Settings > **Remote[Attached Container ...]選択** > Open Settings(JSON)からsettings.jsonを編集
 
 ```json
 {

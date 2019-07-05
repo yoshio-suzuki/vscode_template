@@ -5,12 +5,12 @@ RUN apt-get update && apt-get install -y screen less locales && \
     locale-gen ja_JP.UTF-8 && localedef -f UTF-8 -i ja_JP ja_JP && \
     ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash && \
-    pip install pipenv
+    pip install pipenv && \
+    mkdir /root/code
 
-ENV LANG=ja_JP.UTF-8
-WORKDIR /root/code
+WORKDIR /root
 COPY .screenrc .bashrc /root/
-
+ENV LANG=ja_JP.UTF-8
 VOLUME ["/root"]
 ENTRYPOINT ["/bin/bash"]
 
