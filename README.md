@@ -61,25 +61,13 @@ $ docker system prune --volumes
 ## Visual Studio Code
 ---
 
-### 基本エクステンション追加
-* Extensionsから下記追加(初回のみ)
+### 初期設定(初回のみ)
+* Extensionsから下記追加
     * Remote - Containers
     * 個人的にVim
 
-### コンテナ接続
-* 画面左下の緑色の部分をクリック > Remote-Containers: Attach to Running Container... > 対象のDockerコンテナを選ぶ
-* 新しいウィンドウが開く
-
-### プロジェクトフォルダを開く
-* Explorer > Open Folderから、/root/code/を開く
-
-### コンテナ用エクステンション追加
-* Extensionsから下記追加(Install on Attached Container)
-    * Python
-
-### ショットカット設定
-* bashターミナルとvim向け
-* File > Preferences > Keyboard Shortcuts > Open Keyboard Shortcuts(JSON)からkeybindings.jsonを編集
+* bashターミナルとvim向けショットカット設定
+    * File > Preferences > Keyboard Shortcuts > Open Keyboard Shortcuts(JSON)からkeybindings.jsonを編集
 ```json
 // Place your key bindings in this file to override the defaultsauto[]
 [
@@ -112,10 +100,22 @@ $ docker system prune --volumes
 ]
 ```
 
-### コンテナ用シェル設定
-* コンテナでターミナルを開くとbashではなくshになってしまう対処（そのうち修正されるかも）
-* Settingsの『**Remote[Attached Container ...]側**』で、terminal.integrated.shell.linux: /bin/bashに設定
-* Edit in settings.jsonから設定
+### コンテナ別設定
+* コンテナ接続
+    * 画面左下の緑色の部分をクリック > Remote-Containers: Attach to Running Container... > 対象のDockerコンテナを選ぶ
+    * 新しいウィンドウが開く
+
+* プロジェクトフォルダを開く
+    * Explorer > Open Folderから、/root/code/を開く
+
+* Extensionsから下記追加
+    * Python
+
+* コンテナ用シェル設定
+    * コンテナでターミナルを開くとbashではなくshになってしまう対処（そのうち修正されるかも）
+    * Settingsの『**Remote[Attached Container ...]側**』で、terminal.integrated.shell.linux: /bin/bashに設定
+    * Edit in settings.jsonから設定
+
 ```json
 {
     "terminal.integrated.shell.linux": "/bin/bash"

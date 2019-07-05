@@ -6,3 +6,7 @@ services:
     tty: true
     environment:
       - PIPENV_VENV_IN_PROJECT=true
+    volumes:
+      - root-data:/root
+volumes:
+    root-data:
