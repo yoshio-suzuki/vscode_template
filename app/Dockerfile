@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y screen less locales && \
 
 ENV LANG=ja_JP.UTF-8
 WORKDIR /root/code
-COPY .screenrc .bashrc ./
+COPY .screenrc .bashrc /root/
 
 VOLUME ["/root"]
 ENTRYPOINT ["/bin/bash"]
